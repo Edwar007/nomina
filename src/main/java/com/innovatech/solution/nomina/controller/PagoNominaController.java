@@ -54,7 +54,6 @@ public class PagoNominaController {
     }
     @PostMapping("/busqueda-pagos")
     public ResponseEntity<List<PagoNomina>> busquedaPagos(@RequestBody BusquedaPagosDTO busquedaDTO){
-        System.out.println(busquedaDTO);
        return new ResponseEntity<List<PagoNomina>>(consultasPagoService.busquedaPagos(busquedaDTO), HttpStatus.OK);
     }
 }

@@ -1,5 +1,7 @@
 package com.innovatech.solution.nomina.controller;
 
+import com.innovatech.solution.nomina.dta.PagoNomina;
+import com.innovatech.solution.nomina.dta.Persona;
 import com.innovatech.solution.nomina.dto.PersonaDTO;
 import com.innovatech.solution.nomina.service.PersonaService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,10 +30,17 @@ public class PersonalController {
 
     @PostMapping("/registrar-persona")
     public PersonaDTO registrarPersona(@RequestBody PersonaDTO persona) {
-        System.out.println("Esta entrando"+persona);
         return personaService.registrar(persona);
 
     }
 
+    @PostMapping("/actualizar-persona")
+    public void actualizarPersona(@RequestBody PersonaDTO persona) {
+        personaService.actualizar(persona);
+    }
+    @PostMapping("/desactivar-persona/{id}")
+    public void desactivarPersona(@PathVariable("id") Long id) {
+        personaService.desactivar(id);
+    }
 
 }
