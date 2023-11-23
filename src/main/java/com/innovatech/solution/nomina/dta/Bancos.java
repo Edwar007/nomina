@@ -20,7 +20,4 @@ public class Bancos {
 
     @Column(name = "razon_social")
     private String razonSocial;
-
-    @Column(name = "num_cuenta")
-    private String numCuenta;
 }

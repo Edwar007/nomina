@@ -6,10 +6,8 @@ import com.innovatech.solution.nomina.repository.PersonaRepository;
 import com.innovatech.solution.nomina.service.PersonaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -84,11 +82,12 @@ public class PersonaServiceImpl implements PersonaService {
                 .apellidos(persona.getApellidos())
                 .salario(persona.getSalario())
                 .cuentaBancaria(persona.getCuentaBancaria())
+                .fechaIngreso(persona.getFechaIngreso())
+                .fechaNac(persona.getFechaNac())
+                .fechaRetiro(persona.getFechaRetiro())
                 .estado(persona.getEstado())
                 .telefono(persona.getTelefono())
                 .correo(persona.getCorreo())
-                .fechaIngreso(persona.getFechaIngreso())
-                .fechaNac(persona.getFechaNac())
                 .cargo(persona.getCargo())
                 .area(persona.getArea())
                 .tipoContrato(persona.getTipoContrato())
@@ -96,8 +95,39 @@ public class PersonaServiceImpl implements PersonaService {
                 .eps(persona.getEps())
                 .pensiones(persona.getPensiones())
                 .build();
-
         personaRepository.save(person);
         return persona;
+    }
+
+
+    @Override
+    public void actualizar(PersonaDTO datos){
+        Optional<Persona> person = personaRepository.findByIdentificacion(datos.getIdentificacion());
+        person.get().setId(datos.getId());
+        person.get().setIdentificacion(datos.getIdentificacion());
+        person.get().setNombres(datos.getNombres());
+        person.get().setApellidos(datos.getApellidos());
+        person.get().setSalario(datos.getSalario());
+        person.get().setCuentaBancaria(datos.getCuentaBancaria());
+        person.get().setFechaIngreso(datos.getFechaIngreso());
+        person.get().setFechaNac(datos.getFechaNac());
+        person.get().setTelefono(datos.getTelefono());
+        person.get().setCorreo(datos.getCorreo());
+        person.get().setCargo(datos.getCargo());
+        person.get().setArea(datos.getArea());
+        person.get().setTipoContrato(datos.getTipoContrato());
+        person.get().setBanco(datos.getBanco());
+        person.get().setEps(datos.getEps());
+        person.get().setPensiones(datos.getPensiones());
+        personaRepository.save(person.get());
+    }
+
+    @Override
+    public void desactivar(Long id){
+        Optional<Persona> persona = personaRepository.findById(id);
+        Date fechaActual = new Date();
+        persona.get().setEstado("Desactivado");
+        persona.get().setFechaRetiro(fechaActual);
+        personaRepository.save(persona.get());
     }
 }

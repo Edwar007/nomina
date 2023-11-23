@@ -7,29 +7,6 @@ $(document).ready(function () {
   cargarPensiones();
 });
 
-/*async function registrarUsuario() {
-  let datos = {};
-  datos.email = document.getElementById('txtEmail').value;
-  datos.password = document.getElementById('txtPassword').value;
-
-  let repetirPassword = document.getElementById('txtRepetirPassword').value;
-
-  if (repetirPassword != datos.password) {
-    alert('La contraseña que escribiste es diferente.');
-    return;
-  }
-  const request = await fetch('usuarios/registrarUsuario', {
-    method: 'POST',
-    headers: {
-      'Accept': 'application/json',
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(datos)
-  });
-  alert("La cuenta fue creada con exito!");
-  window.location.href = 'login.html'
-}*/
-
 async function cargarCargos() {
   const select = document.querySelector("#txtCargo");
   const respuesta = await fetch("/cargar/cargos", {
@@ -149,40 +126,57 @@ async function registrarEmpleado() {
 
   let identificacion = document.getElementById('txtIdentificacion').value;  
   let nombres = document.getElementById('txtNombres').value;
-  let apellidos = document.getElementById('txtNombres').value;
+  let apellidos = document.getElementById('txtApellidos').value;
   let salario = document.getElementById('txtSalario').value; 
   let cuenta_bancaria = document.getElementById('txtCuenta').value;
-  let fecha_ingreso  = document.getElementById('txtFecIngreso').value;
+  let fecha_ingreso  = new Date();
   let fecha_nac = document.getElementById('txtFecNacimiento').value;
-  let estado = 'ACTIVO';
+  let estado = 'Activo';
   let telefono  = document.getElementById('txtTelefono').value;
   let correo = document.getElementById('txtEmail').value;
-  let cargo_id = document.getElementById('txtCargo').value;
-  let area_id = document.getElementById('txtArea').value;
-  let tipo_contrato_id = document.getElementById('txtTipoContrato').value;  
-  let banco_id = document.getElementById('txtBanco').value;
-  let eps_id = document.getElementById('txtEps').value;
-  let pensiones_id = document.getElementById('txtPension').value;
-  let fondo_id = document.getElementById('txtFondoEmp').value;
+
+  let sCargo = document.getElementById('txtCargo');
+  let cargo_id = sCargo.options[sCargo.selectedIndex].value;  
+  let sArea = document.getElementById('txtArea');
+  let area_id = sArea.options[sArea.selectedIndex].value; 
+  let sTc = document.getElementById('txtTipoContrato');
+  let tipo_contrato_id = sTc.options[sTc.selectedIndex].value; 
+  let sBanco_id = document.getElementById('txtBanco');
+  let banco_id = sBanco_id.options[sBanco_id.selectedIndex].value; 
+  let sEps_id = document.getElementById('txtEps');
+  let eps_id = sEps_id.options[sEps_id.selectedIndex].value; 
+  let sPensiones_id = document.getElementById('txtPension');
+  let pensiones_id = sPensiones_id.options[sPensiones_id.selectedIndex].value;
 
   let datos = {
       "identificacion":identificacion,      
       "nombres":nombres,
       "apellidos":apellidos,
       "salario":salario,
-      "cuenta_bancaria":cuenta_bancaria,
-      "fecha_ingreso":fecha_ingreso,
-      "fecha_nac":fecha_nac,
+      "cuentaBancaria":cuenta_bancaria,
       "estado":estado,
       "telefono":telefono,
       "correo":correo,
-      "cargo":cargo_id,
-      "area":area_id,      
-      "tipoContrato":tipo_contrato_id,      
-      "banco":banco_id,
-      "eps":eps_id,
-      "pensiones":pensiones_id,
-      "fondo":fondo_id      
+      "fechaIngreso":fecha_ingreso,
+      "fechaNac":fecha_nac,
+      "cargo":{
+        "id":cargo_id
+      },
+      "area":{
+        "id":area_id
+      },
+      "tipoContrato":{
+        "id":tipo_contrato_id
+      },
+      "banco":{
+        "id":banco_id
+      },
+      "eps":{
+        "id":eps_id
+      },
+      "pensiones":{
+        "id":pensiones_id
+      },
   };
 
   const request = await fetch('/personal/registrar-persona', {
@@ -193,6 +187,11 @@ async function registrarEmpleado() {
     },
     body: JSON.stringify(datos)
   });
-  alert("¡El empleado fue creado con exito!");
-  //window.location.href = 'tablaPersonal.html'
+  if(request.ok){
+    alert("¡El empleado fue creado con exito!");
+    location.reload();
+
+  }else{
+    alert("No se pudo crear al empleado");
+  }
 }
