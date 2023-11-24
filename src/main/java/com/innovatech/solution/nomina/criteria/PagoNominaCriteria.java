@@ -2,7 +2,6 @@ package com.innovatech.solution.nomina.criteria;
 
 import io.github.jhipster.service.filter.DoubleFilter;
 import io.github.jhipster.service.filter.LocalDateFilter;
-import io.github.jhipster.service.filter.LongFilter;
 import io.github.jhipster.service.filter.StringFilter;
 import lombok.Data;
 

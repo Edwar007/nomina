@@ -1,4 +1,5 @@
 com\innovatech\solution\nomina\service\impl\UsuarioServiceImp.class
+com\innovatech\solution\nomina\service\impl\ConsultasPersonaServiceImpl.class
 com\innovatech\solution\nomina\criteria\PagoNominaCriteria.class
 com\innovatech\solution\nomina\repository\AreaRepository.class
 com\innovatech\solution\nomina\repository\impl\TipoContratoRepositoryImp.class
@@ -65,11 +66,13 @@ com\innovatech\solution\nomina\dto\BusquedaPagosDTO.class
 com\innovatech\solution\nomina\repository\impl\PensionRepositoryImp.class
 com\innovatech\solution\nomina\dta\Eps.class
 com\innovatech\solution\nomina\dta\Eps$EpsBuilder.class
+com\innovatech\solution\nomina\dto\BusquedaPersonasDTO.class
 com\innovatech\solution\nomina\repository\impl\UsuarioRepository.class
 com\innovatech\solution\nomina\repository\CargoRepository.class
 com\innovatech\solution\nomina\repository\impl\CargoRepositoryImp.class
 com\innovatech\solution\nomina\controller\CargarCamposController.class
 com\innovatech\solution\nomina\dto\PensionesDTO.class
+com\innovatech\solution\nomina\criteria\PersonaCriteria.class
 com\innovatech\solution\nomina\dto\PersonaDTO$PersonaDTOBuilder.class
 com\innovatech\solution\nomina\dta\Area_.class
 com\innovatech\solution\nomina\dta\Eps_.class

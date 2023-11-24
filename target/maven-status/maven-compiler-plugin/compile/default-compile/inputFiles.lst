@@ -1,3 +1,4 @@
+D:\Repos\nomina\src\main\java\com\innovatech\solution\nomina\criteria\PersonaCriteria.java
 D:\Repos\nomina\src\main\java\com\innovatech\solution\nomina\repository\BancoRepository.java
 D:\Repos\nomina\src\main\java\com\innovatech\solution\nomina\service\impl\ConsultasPagoServiceImpl.java
 D:\Repos\nomina\src\main\java\com\innovatech\solution\nomina\dto\JasperDTO.java
@@ -22,6 +23,7 @@ D:\Repos\nomina\src\main\java\com\innovatech\solution\nomina\ServletInitializer.
 D:\Repos\nomina\src\main\java\com\innovatech\solution\nomina\dto\CargoDTO.java
 D:\Repos\nomina\src\main\java\com\innovatech\solution\nomina\dto\TipoContratoDTO.java
 D:\Repos\nomina\src\main\java\com\innovatech\solution\nomina\dta\Cargo.java
+D:\Repos\nomina\src\main\java\com\innovatech\solution\nomina\service\impl\ConsultasPersonaServiceImpl.java
 D:\Repos\nomina\src\main\java\com\innovatech\solution\nomina\service\PersonaService.java
 D:\Repos\nomina\src\main\java\com\innovatech\solution\nomina\service\impl\PagoNominaServiceImpl.java
 D:\Repos\nomina\src\main\java\com\innovatech\solution\nomina\repository\impl\EpsRepositoryImp.java
@@ -40,6 +42,7 @@ D:\Repos\nomina\src\main\java\com\innovatech\solution\nomina\service\UsuarioServ
 D:\Repos\nomina\src\main\java\com\innovatech\solution\nomina\repository\impl\CargoRepositoryImp.java
 D:\Repos\nomina\src\main\java\com\innovatech\solution\nomina\repository\CargoRepository.java
 D:\Repos\nomina\src\main\java\com\innovatech\solution\nomina\dto\PensionesDTO.java
+D:\Repos\nomina\src\main\java\com\innovatech\solution\nomina\dto\BusquedaPersonasDTO.java
 D:\Repos\nomina\src\main\java\com\innovatech\solution\nomina\service\impl\UsuarioServiceImp.java
 D:\Repos\nomina\src\main\java\com\innovatech\solution\nomina\repository\impl\BancoRepositoryImp.java
 D:\Repos\nomina\src\main\java\com\innovatech\solution\nomina\controller\UsuarioController.java

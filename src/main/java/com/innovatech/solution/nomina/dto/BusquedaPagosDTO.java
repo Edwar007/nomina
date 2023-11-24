@@ -1,7 +1,6 @@
 package com.innovatech.solution.nomina.dto;
 
 import lombok.Data;
-
 import java.time.LocalDate;
 
 @Data
@@ -14,5 +13,4 @@ public class BusquedaPagosDTO {
     private Double totDevHasta;
     private Double pagFinDesde;
     private Double pagFinHasta;
-
 }

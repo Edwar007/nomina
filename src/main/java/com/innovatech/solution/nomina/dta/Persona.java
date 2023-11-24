@@ -1,5 +1,6 @@
 package com.innovatech.solution.nomina.dta;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -54,10 +55,12 @@ public class Persona {
 
     @ManyToOne
     @JoinColumn(name="cargo_id")
+    @JsonIgnoreProperties("personas")
     private Cargo cargo;
 
     @ManyToOne
     @JoinColumn(name="area_id")
+    @JsonIgnoreProperties("personas")
     private Area area;
 
     @ManyToOne
