@@ -24,5 +24,6 @@ public class Cargo {
     private String nombre;
 
     @OneToMany(mappedBy = "cargo")
+    @JsonIgnore
     private Set<Persona> personas = new HashSet<>();
 }

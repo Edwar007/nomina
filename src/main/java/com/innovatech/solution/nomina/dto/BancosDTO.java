@@ -17,5 +17,4 @@ import javax.persistence.Id;
 public class BancosDTO {
     private Long id;
     private String razonSocial;
-    private String numCuenta;
 }

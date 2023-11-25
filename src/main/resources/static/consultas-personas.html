@@ -10,53 +10,7 @@
     <meta name="author" content="">
 
     <title>SB Admin 2 - Blank</title>
-
-    <style>
-        #txtDesMin {
-            border: 2px solid rgba(19, 171, 179, 0.505);
-            /* Cambia 'red' al color que desees para el borde */
-            border-radius: 5px;
-            /* Esto hará que los bordes sean redondeados */
-        }
-
-        #txtDesMax {
-            border: 2px solid rgb(19, 171, 179, 0.505);
-            /* Cambia 'red' al color que desees para el borde */
-            border-radius: 5px;
-            /* Esto hará que los bordes sean redondeados */
-        }
-
-        #txtDevMin {
-            border: 2px solid rgb(167, 136, 51);
-            /* Cambia 'red' al color que desees para el borde */
-            border-radius: 5px;
-            /* Esto hará que los bordes sean redondeados */
-        }
-
-        #txtDevMax {
-            border: 2px solid rgb(167, 136, 51);
-            /* Cambia 'red' al color que desees para el borde */
-            border-radius: 5px;
-            /* Esto hará que los bordes sean redondeados */
-        }
-
-
-        #txtPagMin {
-            border: 2px solid rgb(53, 129, 97);
-            /* Cambia 'red' al color que desees para el borde */
-            border-radius: 5px;
-            /* Esto hará que los bordes sean redondeados */
-        }
-
-        #txtPagMax {
-            border: 2px solid rgb(53, 129, 97);
-            /* Cambia 'red' al color que desees para el borde */
-            border-radius: 5px;
-            /* Esto hará que los bordes sean redondeados */
-        }
-
-    </style>
-    <!-- Custom fonts for this template -->
+       <!-- Custom fonts for this template -->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
     <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
@@ -91,8 +45,8 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800">Consultas Pagos</h1>
-                    <p class="mb-4">Por medio de esta opción puedes visualizar los diferentes pagos que se han realizado
+                    <h1 class="h3 mb-2 text-gray-800">Consultas Empleados</h1>
+                    <p class="mb-4">Por medio de esta opción puedes visualizar los diferentes empleados
                     </p>
 
                     <!-- DataTales Example -->
@@ -103,40 +57,41 @@
                             <div class="form-group row">
                                 <div class="col-sm-3 mb-3 mb-sm-0">
                                     <label>Identificacion</label>
-                                    <input type="number" class="form-control form-control-user" id="txtIdentificacion"
-                                        min="0">
-                                </div>
-                                <div class="col-sm-3">
-                                    <label>Fecha</label>
-                                    <input type="date" class="form-control form-control-user" id="txtFecha">
+                                    <input type="number" class="form-control form-control-user" id="txtIdentificacion"min="0">
                                 </div>
                                 <div class="col-sm-3 mb-3 mb-sm-0">
-                                    <label>Descuento Desde</label>
-                                    <input type="number" class="form-control form-control-user" id="txtDesMin" min="0">
+                                    <label>Apellidos</label>
+                                    <input type="text" class="form-control form-control-user" id="txtApellidos" min="0">
                                 </div>
-                                <div class="col-sm-3">
-                                    <label>Descuento Hasta</label>
-                                    <input type="number" class="form-control form-control-user" id="txtDesMax" min="0">
+                                <div class="col-sm-3 mb-3 mb-sm-0">
+                                    <label>Area</label>
+                                    <select name="txtArea" class="input_form form-control" id="txtArea">
+                                        <option value="r">Seleccione</option>
+                                    </select>
+                                </div>
+                                <div class="col-sm-3 mb-3">
+                                    <label>Cargo</label>
+                                    <select name="txtCargo" class="input_form form-control" id="txtCargo">
+                                        <option value="r">Seleccione</option>
+                                    </select>
                                 </div>
                             </div>
-
                             <div class="form-group row">
-                                <div class="col-sm-3 mb-3 mb-sm-0">
-                                    <label>Devengado Desde</label>
-                                    <input type="number" class="form-control form-control-user" id="txtDevMin" min="0">
-                                </div>
-                                <div class="col-sm-3">
-                                    <label>Devengado Hasta</label>
-                                    <input type="number" class="form-control form-control-user" id="txtDevMax" min="0">
+                                <div class="col-sm-3 mb-3">
+                                    <label>Estado</label>
+                                    <select name="txtEstado" class="input_form form-control" id="txtEstado">
+                                        <option value="r">Seleccione</option>
+                                    </select>
                                 </div>
                                 <div class="col-sm-3 mb-3 mb-sm-0">
-                                    <label>Pago Desde</label>
-                                    <input type="number" class="form-control form-control-user" id="txtPagMin" min="0">
+                                    <label>Salario Desde</label>
+                                    <input type="number" class="form-control form-control-user" id="txtSalDes" min="0">
                                 </div>
                                 <div class="col-sm-3">
-                                    <label>Pago Hasta</label>
-                                    <input type="number" class="form-control form-control-user" id="txtPagMax" min="0">
+                                    <label>Salario Hasta</label>
+                                    <input type="number" class="form-control form-control-user" id="txtSalHas" min="0">
                                 </div>
+                                
                             </div>
 
                             <div class="form-group row justify-content-center">
@@ -147,34 +102,34 @@
                                 </div>
                                 <div class="col-sm-4 d-flex justify-content-center">
                                     <label>&nbsp;</label>
-                                    <button type="button" class="btn btn-primary w-100" onclick="buscarPago();">
+                                    <button type="button" class="btn btn-primary w-100" onclick="buscarPersonas();">
                                         Buscar</button>
                                 </div>
                             </div>
                         </div>
                         <div class="card-body">
                             <div class="table-responsive">
-                                <table class="table table-bordered" id="tablaPagos" width="100%" cellspacing="0">
+                                <table class="table table-bordered" id="tablaPersonas" width="100%" cellspacing="0">
                                     <thead>
                                         <tr>
                                             <th>ID</th>
                                             <th>Identificación</th>
-                                            <th>Fecha</th>
-                                            <th>Pago Final</th>
-                                            <th>Total Devengado</th>
-                                            <th>Total Descuento</th>
-                                            <th>Prima</th>
-                                            <th>Subsidios transporte</th>
-                                            <th>Gastos Representacion</th>
-                                            <th>Viaticos</th>
-                                            <th>Comisiones</th>
-                                            <th>Salud</th>
-                                            <th>Pension</th>
-                                            <th>Fondo Solidario</th>
-                                            <th>Hor.Ext. Diurnas</th>
-                                            <th>Hor.Ext. Nocturnas</th>
-                                            <th>Hor.Ext.Diu.Dom. Festivos</th>
-                                            <th>Hor.Ext.Noc.Dom. Festivos</th>
+                                            <th>Nombres</th>
+                                            <th>Apellidos</th>
+                                            <th>Salario</th>
+                                            <th>Cuenta Bancaria</th>
+                                            <th>Fecha Ingreso</th>
+                                            <th>Fecha Nacimiento</th>
+                                            <th>Fecha Retiro</th>
+                                            <th>Estado</th>
+                                            <th>Telefono</th>
+                                            <th>Correo</th>
+                                            <th>Area</th>
+                                            <th>Cargo</th>
+                                            <th>Tipo Contrato</th>
+                                            <th>Banco</th>
+                                            <th>EPS</th>
+                                            <th>Pensiones</th>
                                             <th>Actualizar</th>
                                             <th>Desactivar</th>
                                         </tr>
@@ -208,6 +163,13 @@
     <a class="scroll-to-top rounded" href="#page-top">
         <i class="fas fa-angle-up"></i>
     </a>
+
+    <div  class="modal fade" id="actualizarModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p>Contenido de la ventana modal...</p>
+        </div>
+    </div>
 
     <!-- Logout Modal-->
     <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
@@ -245,7 +207,7 @@
     <script src="vendor/datatables/dataTables.bootstrap4.min.js"></script>
 
     <!-- Page level custom scripts -->
-    <script src="js/consultas-pagos.js"></script>
+    <script src="js/consultas-personas.js"></script>
 
     <script>
         fetch('barra-izquierda.html')

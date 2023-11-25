@@ -25,5 +25,6 @@ public class Area {
     private String nombre;
 
     @OneToMany(mappedBy = "area")
+    @JsonIgnore
     private Set<Persona> personas = new HashSet<>();
 }
